@@ -1,0 +1,66 @@
+@import "./reset.scss";
+
+$white: #dee1d6;
+$green: #5ebc44;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.poster {
+  display: grid;
+  grid-template-rows: 30% 70%;
+  width: 37%;
+  height: 100%;
+  background-color: $green;
+
+  .top {
+    display: grid;
+    row-gap: 25px;
+    padding: 25px;
+    grid-template-columns: 75fr 25fr;
+
+    .top__box {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      font-size: 18px;
+      font-weight: 600;
+
+      h1 {
+        font-size: 98px;
+      }
+
+      &:last-child {
+        align-self: center;
+        font-size: 22px;
+        color: white;
+      }
+    }
+  }
+
+  .bottom {
+    overflow: hidden;
+    .circles {
+      display: grid;
+      gap: 5px;
+      grid-template: repeat(11, 1fr) / repeat(11, 1fr);
+      transform: scale(1.1);
+      height: 100%;
+      background-color: black;
+
+      .circle {
+        border-radius: 50%;
+        background-color: $green;
+
+        &:nth-child(3n) {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
